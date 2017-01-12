@@ -1,4 +1,4 @@
-#To load the text into a string:
+#To remove spaces in the info string
 def remove_space(info_string):
     for char in info_string:
         if char=="\t" or char==" ":
@@ -7,10 +7,10 @@ def remove_space(info_string):
             break
     return info_string
 
+#TO create movies list
 def create_movie_list(info_string):
 
     movie_list=[]
-    test=[]
     while info_string:
         info_string = remove_space(info_string)
         movie_end = info_string.find(")")
@@ -22,7 +22,7 @@ def create_movie_list(info_string):
         
     return info_string, movie_list
 
-
+#To find actor name to link it with the movies list
 def find_name(info_string):    
     lastname_end = info_string.find(",")
     lastname= info_string[0:lastname_end]
@@ -46,7 +46,9 @@ def parse_actor_data(actor_data):
         actor_dict[name]=movie_list
     return actor_dict
 
+
 ############Invert actor dictionary###################
+
 def invert_actor_dict(actor_dict):
     actors=[]+actor_dict.keys() #list for actors
     movies_of_actor = [] #list to store movie that actors are in
@@ -62,6 +64,7 @@ def invert_actor_dict(actor_dict):
     return invert_actor_dict
 
 #######TO find connection from one actor to another (this will list other actors related to the specific actor)#########
+
 def find_connection(actor_name, actor_dict, movie_dict,No_use):
     actor_name=str.title(actor_name)
     if actor_name not in actor_dict:
@@ -116,7 +119,7 @@ def find_connection(actor_name, actor_dict, movie_dict,No_use):
 
 
 if __name__=="__main__":
-    
+#To load the text into a string: and play the game    
     filename="small_actor_data.txt"
     reader=open(filename,"r") #note: this open the files as read only
     reader = reader.read()
