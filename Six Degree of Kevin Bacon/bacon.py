@@ -133,7 +133,6 @@ if __name__=="__main__":
             print ("Thank you for playing! The largest Bacon Number you found was "+str(n)+".")
             break
         result= find_connection(actor_name, actor_dict, movie_dict,"test")
-        print result
         if result ==-1:
             print actor_name+" has a Bacon Number of Infinity."
         else:
