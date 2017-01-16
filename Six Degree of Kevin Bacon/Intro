@@ -1,0 +1,5 @@
+Six Degree of Kevin Bacon:
+It allows the user to determine if the input actors has any relation to Kevin Bacon through the movie industry.
+
+Note: Currently, the database used for the program and is not updated to the current date. Therefore, some actors and movies are not included.
+Have fun!
